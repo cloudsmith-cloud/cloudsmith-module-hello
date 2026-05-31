@@ -1,0 +1,44 @@
+{
+  "$schema": "https://cloudsmith.cloud/schemas/module-manifest/v1.json",
+  "metadata": {
+    "id": "cloudsmith-module-hello",
+    "name": "Hello World",
+    "version": "0.1.0",
+    "description": "Reference module demonstrating CloudSmith module install, uninstall, and nav slot registration. Use this as a template when building new modules.",
+    "author": "CloudSmith",
+    "publisher": "cloudsmith-cloud",
+    "license": "Apache-2.0",
+    "repositoryUrl": "https://github.com/cloudsmith-cloud/cloudsmith-module-hello"
+  },
+  "spec": {
+    "sdkVersion": ">=0.1.0 <1.0.0",
+    "image": "ghcr.io/cloudsmith-cloud/cloudsmith-module-hello:latest",
+    "apiBasePath": "/api/hello",
+    "healthEndpoint": "/health",
+    "permissionsRequired": [],
+    "navSlots": [
+      {
+        "slotId": "nav.primary",
+        "id": "hello-world",
+        "label": "Hello World",
+        "icon": "Handshake",
+        "route": "/modules/hello",
+        "order": 100
+      }
+    ],
+    "healthChecks": [
+      {
+        "name": "hello-module",
+        "path": "/health",
+        "tags": ["informational"]
+      }
+    ],
+    "backgroundJobs": [
+      {
+        "id": "hello-heartbeat",
+        "description": "Logs a heartbeat message every 60 seconds to demonstrate background job contract.",
+        "intervalSeconds": 60
+      }
+    ]
+  }
+}

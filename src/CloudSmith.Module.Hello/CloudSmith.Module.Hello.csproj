@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>CloudSmith.Module.Hello</RootNamespace>
+    <AssemblyName>CloudSmith.Module.Hello</AssemblyName>
+    <Version>0.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      CloudSmith.Sdk provides ICloudSmithModule, IModuleContext, ModuleInfo,
+      CloudSmithSlots, and all hosting extension methods.
+      Sourced from GitHub Packages: https://nuget.pkg.github.com/cloudsmith-cloud/index.json
+    -->
+    <PackageReference Include="CloudSmith.Sdk" Version="0.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>
